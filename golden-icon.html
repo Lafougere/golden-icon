@@ -1,0 +1,65 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="golden-icon">
+<template>
+	<style>
+		:host {
+			display: block;
+			image-rendering: pixelated;
+			margin: 0;
+			padding: 0;
+		}
+		i {
+			background: url(../golden-assets/images/sprite2.png);
+			width: 10px;
+			height: 10px;
+			margin: 0;
+			padding: 0;
+			display:block;
+			background-position:-1px -1px;
+		}
+		i.options {background-position: -512px -38px;margin-left: 1px;}
+		i.plus {background-position: -511px -54px;}
+		i.minus {background-position: -527px -54px;}
+		i.search {background-position: -527px -38px;}
+		i.talk {background-position: -543px -38px;}
+		i.yes {background-position: -511px -70px;}
+		i.no,i.close {background-position: -527px -70px;}
+		i.arrow-left {background-position: -542px -54px;margin-left: -1px;}
+		i.arrow-up {background-position: -543px -69px;}
+		i.arrow-right {background-position: -560px -54px;margin-left: 1px;}
+		i.arrow-down {background-position: -559px -71px;}
+		i.undo {background-position: -545px -22px;width: 12px;}
+		i.redo {background-position: -546px -4px;width: 12px;}
+		i.open {background-position: -510px -21px;width: 12px;margin-left: -1px;}
+		i.save {background-position: -526px -4px;width: 12px;height: 12px;margin-left: -1px;}
+		i.new {background-position: -510px -5px;width: 12px;height: 12px;margin-left: -1px;}
+		i.cancel {background-position: -526px -20px;width: 12px;height: 12px;margin-left: -1px;}
+	</style>
+	<i class$="[[icon]]"></i>
+</template>
+
+<script>
+/**
+* `golden-icon`
+* pixel art icon set
+*
+* @customElement
+* @polymer
+* @demo demo/index.html
+*/
+class GoldenIcon extends Polymer.Element {
+	static get is() { return 'golden-icon'; }
+	static get properties() {
+		return {
+			icon: {
+				type: String,
+				value: ''
+			}
+		}
+	}
+}
+
+window.customElements.define(GoldenIcon.is, GoldenIcon);
+</script>
+</dom-module>
